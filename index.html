@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,23 +9,47 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Vue Hello</title>
 </head>
+
 <body>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <div id="saluto">{{ message }}</div>
-    <script>
-        const { createApp } = Vue
 
-        createApp({
-            data () {
-                return {
-                    message: "Hello Vue!"
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Vue.js - Saluto e Immagine</title>
+
+    </head>
+
+    <body>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+        <div id="saluto">
+            <h1>{{ message }}</h1>
+            <input v-model="message">
+            <img v-bind:src="imageSrc" alt="image vue">
+        </div>
+
+        <script>
+            const { createApp } = Vue
+
+            createApp({
+                data() {
+                    return {
+                        message: "Hello Vue!",
+                        imageSrc: "wp3914728.png"
+                        
+                    }
                 }
-            }
-        }).mount("#saluto")
-    </script>
+            }).mount("#saluto")
+        </script>
 
-    <script src="js/scripts.js"></script>
-</body>
-</html>
+
+        <script src="js/scripts.js"></script>
+    </body>
+
+    </html>
